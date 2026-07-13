@@ -1,10 +1,30 @@
-import { Stack } from 'expo-router';
+import { Link } from 'expo-router';
+import { StyleSheet, Text, View } from 'react-native';
 
-export default function RootLayout() {
+export default function Index() {
   return (
-    <Stack>
-      <Stack.Screen name='index' options={{title: 'Home'}}/>
-      <Stack.Screen name='about' options={{title: 'About'}}/>
-    </Stack>
+    <View style={styles.container}>
+      <Text style={styles.text}>Home screen</Text>
+      <Link href={'/about'} style={styles.button}>Go to about screen</Link>
+    </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#25292e',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  text: {
+    color: '#fff',
+  },
+  button: {
+    color: '#fff',
+    marginTop: 20,
+    padding: 10,
+    backgroundColor: '#000',
+    borderRadius: 5,
+  },
+});
