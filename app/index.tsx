@@ -6,6 +6,8 @@ export default function Index() {
     <View style={styles.container}>
       <Text style={styles.text}>Home screen</Text>
       <Link href={'/about'} style={styles.button}>Go to about screen</Link>
+      <Link href={'/ai'} style={styles.button}>Go to 404 screen</Link>
+
     </View>
   );
 }
