@@ -1,4 +1,5 @@
 import AntDesign from "@expo/vector-icons/AntDesign";
+import { Image } from "expo-image";
 import { Tabs } from "expo-router";
 
 function Layout(){
@@ -13,21 +14,53 @@ function Layout(){
       }} />
 
 
-      <Tabs.Screen name="history" options={{
+      <Tabs.Screen name="workout" options={{
               headerShown: false,
-              title: 'History',
+              title: 'Workout',
+
               tabBarIcon: ({color, size}) => (
-                  <AntDesign name="home" color={color} size={size}/>
+                  <AntDesign name="plus-circle" color={color} size={size}/>
               ),
             }} />
 
 
 
+      <Tabs.Screen name="active-workout" options={{
+              headerShown: false,
+              title: 'Active Workout',
+              href: null,
+              tabBarStyle: {
+                display: 'none'
+              }
+            }} />
+
+
+
+      <Tabs.Screen name="history" options={{
+              headerShown: false,
+              title: 'History',
+
+              tabBarIcon: ({color, size}) => (
+                  <AntDesign name="clock-circle" color={color} size={size}/>
+              ),
+            }} />
+
+
       <Tabs.Screen name="profile" options={{
               headerShown: false,
               title: 'Profile',
+
               tabBarIcon: ({color, size}) => (
-                  <AntDesign name="home" color={color} size={size}/>
+                  // <AntDesign name="clock-circle" color={color} size={size}/>
+                  <Image 
+                    source={"fdfd"}
+                    className="rounded-full"
+                    style={{
+                      width: 28,
+                      height: 28,
+                      borderRadius: 100
+                    }}
+                  />
               ),
             }} />
 
